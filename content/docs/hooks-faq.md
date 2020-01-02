@@ -829,9 +829,9 @@ function Image(props) {
   // ✅ IntersectionObserver is created lazily once
   function getObserver() {
     if (ref.current === null) {
-      ref.current = new IntersectionObserver(onIntersect);
+      ref.current.value = new IntersectionObserver(onIntersect);
     }
-    return ref.current;
+    return ref.current.value;
   }
 
   // When you need it, call getObserver()
